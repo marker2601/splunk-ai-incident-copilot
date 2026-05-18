@@ -106,7 +106,7 @@ If the MCP endpoint is publicly reachable, the app can also expose it as a remot
 1. Show Splunk running and the `ops_copilot` index.
 2. Open the web app.
 3. Select `Checkout API error surge`.
-4. Run the investigation.
+4. Use the default `Last 24 hours` window and run the investigation.
 5. Show the incident report.
 6. Expand the SPL evidence cards and point out:
    - active alert,
@@ -115,6 +115,12 @@ If the MCP endpoint is publicly reachable, the app can also expose it as a remot
    - checkout p95 latency,
    - service-level blast radius.
 7. Explain how AI turns the Splunk evidence into an incident commander report.
+
+If the evidence cards are empty, reload the demo dataset:
+
+```powershell
+python scripts/load_sample_data.py
+```
 
 ## Submission Checklist
 

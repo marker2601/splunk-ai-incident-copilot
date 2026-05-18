@@ -53,7 +53,7 @@ class Handler(BaseHTTPRequestHandler):
             body = self._read_json()
             service = str(body.get("service") or "checkout-api")
             question = str(body.get("question") or "")
-            window_minutes = int(body.get("window_minutes") or 120)
+            window_minutes = int(body.get("window_minutes") or 1440)
             self._json_response(APP.agent.investigate(service, question, window_minutes))
             return
         if parsed.path == "/api/search":
