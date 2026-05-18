@@ -289,7 +289,13 @@ button.secondary:hover {
   font-size: 18px;
 }
 
-.markdown-output h2:first-child {
+.markdown-output h3 {
+  margin: 16px 0 6px;
+  font-size: 15px;
+}
+
+.markdown-output h2:first-child,
+.markdown-output h3:first-child {
   margin-top: 0;
 }
 
@@ -304,6 +310,41 @@ button.secondary:hover {
   padding: 10px 12px;
   border-left: 4px solid var(--amber);
   background: #fff7e8;
+}
+
+.markdown-output hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+}
+
+.markdown-output table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 18px;
+  font-size: 13px;
+}
+
+.markdown-output th,
+.markdown-output td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-output th {
+  background: var(--surface-alt);
+  color: var(--ink);
+}
+
+.markdown-output pre {
+  overflow-x: auto;
+  background: #101816;
+  color: #d8f7e8;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
 }
 
 .evidence-list {
@@ -386,4 +427,3 @@ button.secondary:hover {
     flex-direction: column;
   }
 }
-
