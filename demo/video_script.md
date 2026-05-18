@@ -1,5 +1,7 @@
 # Splunk AI Incident Copilot Demo Script
 
+This demo uses AI-generated narration.
+
 Splunk AI Incident Copilot is an observability demo for the Splunk Agentic Ops Hackathon.
 It uses Splunk MCP Server to investigate a production incident and OpenAI to summarize the evidence.
 

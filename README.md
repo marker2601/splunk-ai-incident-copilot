@@ -116,6 +116,14 @@ If the MCP endpoint is publicly reachable, the app can also expose it as a remot
    - service-level blast radius.
 7. Explain how AI turns the Splunk evidence into an incident commander report.
 
+To regenerate the local demo video:
+
+```powershell
+python demo/record_demo.py
+```
+
+The video generator uses OpenAI text-to-speech when `OPENAI_API_KEY` is set, with `OPENAI_TTS_MODEL` and `OPENAI_TTS_VOICE` configurable in `.env`. It does not burn captions into the screen recording; instead it writes an optional subtitle file to `demo/output/narration.srt`.
+
 If the evidence cards are empty, reload the demo dataset:
 
 ```powershell

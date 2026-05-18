@@ -104,12 +104,12 @@ function markdownToHtml(markdown) {
         inList = true;
       }
       html += `<li>${inline(line.replace(/^\s*(?:\d+\.\s+|[-*]\s+)/, ""))}</li>`;
-    } else if (line.startsWith("> ")) {
+    } else if (/^\s*>\s+/.test(line)) {
       if (inList) {
         html += "</ul>";
         inList = false;
       }
-      html += `<blockquote>${inline(line.slice(2))}</blockquote>`;
+      html += `<blockquote>${inline(line.replace(/^\s*>\s+/, ""))}</blockquote>`;
     } else if (line.trim()) {
       if (inList) {
         html += "</ul>";
