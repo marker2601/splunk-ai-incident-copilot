@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Splunk AI Incident Copilot</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">S</div>
+          <div>
+            <h1>Incident Copilot</h1>
+            <p>Splunk Agentic Ops</p>
+          </div>
+        </div>
+
+        <section class="panel">
+          <h2>Scenario</h2>
+          <div id="scenarioList" class="scenario-list"></div>
+        </section>
+
+        <section class="panel compact">
+          <h2>Target</h2>
+          <label>
+            Service
+            <input id="serviceInput" value="checkout-api" />
+          </label>
+          <label>
+            Window
+            <select id="windowInput">
+              <option value="60">Last 60 minutes</option>
+              <option value="120" selected>Last 120 minutes</option>
+              <option value="240">Last 4 hours</option>
+            </select>
+          </label>
+          <label>
+            Question
+            <textarea id="questionInput" rows="4">What caused the checkout incident and what should the incident commander do next?</textarea>
+          </label>
+          <button id="runButton">Run Investigation</button>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Observability Track</p>
+            <h2>AI triage grounded in Splunk evidence</h2>
+          </div>
+          <div id="healthBadge" class="badge">Checking Splunk</div>
+        </header>
+
+        <section class="status-grid">
+          <div class="metric">
+            <span>AI mode</span>
+            <strong id="aiMode">-</strong>
+          </div>
+          <div class="metric">
+            <span>MCP</span>
+            <strong id="mcpMode">-</strong>
+          </div>
+          <div class="metric">
+            <span>Index</span>
+            <strong id="indexName">-</strong>
+          </div>
+        </section>
+
+        <section class="report-layout">
+          <article class="report-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Incident Report</p>
+                <h3 id="reportTitle">Ready</h3>
+              </div>
+              <button id="copyButton" class="secondary">Copy Report</button>
+            </div>
+            <div id="report" class="markdown-output"></div>
+          </article>
+
+          <article class="evidence-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Splunk Evidence</p>
+                <h3>SPL searches</h3>
+              </div>
+            </div>
+            <div id="evidenceList" class="evidence-list"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
